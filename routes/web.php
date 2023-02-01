@@ -26,6 +26,9 @@ Route::get('/penyetuju/dashboard', function () {
 });
 Route::get('/admin/tambahkendaraan',['App\Http\Controllers\KendaraanController','TambahKendaraan']);
 // menampilkan data kendaraan
+Route::post('/admin/simpanKendaraan',['App\Http\Controllers\KendaraanController','SimpanKendaraan']);
+
+// menampilkan data kendaraan
 Route::get('/admin/kendaraan',['App\Http\Controllers\KendaraanController','TampilkanKendaran']);
 
 Route::get('/admin/sewa',['App\Http\Controllers\SewaController','index']);

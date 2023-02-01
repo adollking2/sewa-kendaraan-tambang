@@ -18,14 +18,15 @@
                             <h6 class="m-0 font-weight-bold text-primary">Menambah kendaraan</h6>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form  action = "/admin/simpanKendaraan" method = "post" >
+                              @csrf
                                 <div class="form-group">
                                   <label for="nama_kendaraan">Nama Kendaraan</label>
-                                  <input type="text" class="form-control" id="nama_kendaraan" placeholder="ketik disini">
+                                  <input type="text" class="form-control" id="nama_kendaraan" name='nama_kendaraan' placeholder="ketik disini" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="jenis_kenadaan">Jenis Kendaraan</label>
-                                    <select class="form-control" id="jenis_kendaran">
+                                    <label for="category_id">Jenis Kendaraan</label>
+                                    <select class="form-control" id="category_id" name="category_id" required>
                                       <option value="1">mobil</option>
                                       <option value="2">motor</option>
                                       <option value="3">alat berat</option>

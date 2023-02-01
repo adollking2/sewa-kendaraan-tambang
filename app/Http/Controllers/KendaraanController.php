@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\kendaraan;
 use App\Models\category;
+use Carbon\Carbon;
+
 
 class KendaraanController extends Controller
 
@@ -36,6 +38,20 @@ class KendaraanController extends Controller
     {
         return view('admin.tambahkendaraan');
     }
+
+
+    public function SimpanKendaraan(Request $request){
+        $nama_kendaraan=$request->input('nama_kendaraan');
+        $category_id=$request->input('category_id');
+        $current_timestamp = Carbon::now()->toDateTimeString();
+        $data=array('nama_kendaraan'=>$nama_kendaraan,"category_id"=>$category_id,"status"=>"ada",'created_at'=>$current_timestamp,'updated_at'=>$current_timestamp);
+        DB::table('kendaraan')->insert($data);
+        dd(DB::getQueryLog());
+        return redirect('admin/tampilkanKendaraan'); //->with('status','Data Berhasil Ditambahkan');
+
+    }
+
+    
 
     /**
      * Store a newly created resource in storage.
