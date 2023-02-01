@@ -18,6 +18,12 @@ class KendaraanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function index(){
+        return view('admin.adminpage',[
+            'kendaraan' => kendaraan::all()
+        ]);
+    }
+
     
     public function TampilkanKendaran()
     {
@@ -42,13 +48,19 @@ class KendaraanController extends Controller
 
     public function SimpanKendaraan(Request $request){
         $nama_kendaraan=$request->input('nama_kendaraan');
+        $plat_nomor=$request->input('plat_nomor');
         $category_id=$request->input('category_id');
         $current_timestamp = Carbon::now()->toDateTimeString();
-        $data=array('nama_kendaraan'=>$nama_kendaraan,"category_id"=>$category_id,"status"=>"ada",'created_at'=>$current_timestamp,'updated_at'=>$current_timestamp);
+        $data=array('nama_kendaraan'=>$nama_kendaraan,"plat_nomor"=>$plat_nomor,"category_id"=>$category_id,"status"=>"Tersedia",'created_at'=>$current_timestamp,'updated_at'=>$current_timestamp);
         DB::table('kendaraan')->insert($data);
-        dd(DB::getQueryLog());
-        return redirect('admin/tampilkanKendaraan'); //->with('status','Data Berhasil Ditambahkan');
+        
+        return redirect('/admin/kendaraan'); //->with('status','Data Berhasil Ditambahkan');
 
+    }
+
+    public function EditKendaraan($id){
+        $kendaraan = DB::table('kendaraan')->where('id',$id)->first();
+        return view('admin.editkendaraan',['kendaraan' => $kendaraan]);
     }
 
     

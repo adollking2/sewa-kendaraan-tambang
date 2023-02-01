@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kendaraan', function (Blueprint $table) {
+        Schema::create('Drivers', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kendaraan');
-            $table->string('plat_nomor');
-            $table->foreignId('category_id');
-            $table->string('status');
+            $table->string('nama_driver');
+            $table->string('alamat');
+            $table->string('no_hp');
+            $table->string('no_sim');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kendaraan');
+        Schema::dropIfExists('Driver');
     }
 };

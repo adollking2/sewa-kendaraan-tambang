@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::post('/login', 'App\Http\Controllers\LoginController@login');
+Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
+
 // route untuk halaman admin dashboard
-Route::get('/admin/dashboard',['App\Http\Controllers\KendaraanController','index']);
+Route::get('/admin/dashboard',['App\Http\Controllers\KendaraanController','index'])->middleware('isLogin');
 
 // route untuk halaman penyetuju dashboard
 Route::get('/penyetuju/dashboard', function () {
@@ -33,9 +36,7 @@ Route::get('/admin/kendaraan',['App\Http\Controllers\KendaraanController','Tampi
 
 Route::get('/admin/sewa',['App\Http\Controllers\SewaController','index']);
 
-Route::get('/admin/driver/', function () {
-    return view('driver');
-});
+Route::get('/admin/driver/', ['App\Http\Controllers\admin','TampilkanDriver']);
 Route::get('/admin/driver/tambah', function () {
     return view('tambah_driver');
 });

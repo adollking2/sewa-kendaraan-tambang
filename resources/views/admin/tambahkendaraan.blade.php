@@ -25,6 +25,10 @@
                                   <input type="text" class="form-control" id="nama_kendaraan" name='nama_kendaraan' placeholder="ketik disini" required>
                                 </div>
                                 <div class="form-group">
+                                  <label for="plat_nomor">Plat Nomor Kendaraan</label>
+                                  <input type="text" class="form-control" id="plat_nomor" name='plat_nomor' placeholder="ketik disini" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="category_id">Jenis Kendaraan</label>
                                     <select class="form-control" id="category_id" name="category_id" required>
                                       <option value="1">mobil</option>
