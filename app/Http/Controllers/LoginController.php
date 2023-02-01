@@ -21,11 +21,18 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
         
-        if (Auth::attempt($validatedData)) {
+        if (Auth::attempt($validatedData) && Auth::user()->roles == 'admin') {
             $request->session()->regenerate();
 
             return redirect()->intended('admin/dashboard')->withSuccess('Signed in');
         }
+        if (Auth::attempt($validatedData) && Auth::user()->roles == 'penyetuju') {
+            $request->session()->regenerate();
+
+            return redirect()->intended('penyetuju/dashboard')->withSuccess('Signed in');
+        }
+
+
   
         return redirect("login")->withSuccess('Login details are not valid');
     }

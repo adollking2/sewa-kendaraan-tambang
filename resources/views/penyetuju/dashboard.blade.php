@@ -1,5 +1,5 @@
 {{-- reosurce from resources/views/layouts/admin --}}
-@extends('layouts.admin')
+@extends('layouts.penyetuju')
 {{-- load container  --}}
 
 @section('container')
@@ -21,18 +21,35 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+                                        <tr> 
                                             <th>Nama kendaran</th>
-                                            <th>jenis kendaraan</th>
-                                            <th>status</th>
+                                            <th>Nama Driver</th>
+                                            <th>Tanggal Sewa</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($kendaraan as $item)
+                                        @foreach ($sewa as $item)
                                         <tr>
                                             <td>{{ $item->nama_kendaraan }}</td>
-                                            <td>{{ $item->jenis_kendaraan }}</td>
-                                            <td>{{ $item->status }}</td>
+                                            <td>{{ $item->nama_driver }}</td>
+                                            <td>{{ $item->tanggal_sewa }}</td>
+                                            <td>{{ $item->status }} </td>
+                                            <td>
+
+                                                <form action="/penyetuju/approved/{{ $item->id }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" id="status" name="status" value="approved">
+
+                                                    <button class="btn btn-success mb-4 mt-4" type="submit"   > 
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Approve</span>
+                                                
+                                                    </button>
+                                                </td>
                                         </tr>    
                                         @endforeach
                                         

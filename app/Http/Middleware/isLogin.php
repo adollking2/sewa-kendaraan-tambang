@@ -21,7 +21,7 @@ class isLogin
             return $next($request);
         }
         if (Auth::check() && Auth::user()->roles == 'penyetuju') {
-            return redirect('/penyetuju/dashboard');
+            return $next($request);
         }
         return redirect('/');
     }

@@ -28,7 +28,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($kendaraan as $item)
+                                      @foreach ($kendaraan as $item)
                                         <tr>
                                             <td>{{ $item->nama_kendaraan }}</td>
                                             <td>{{ $item->jenis_kendaraan }}</td>
