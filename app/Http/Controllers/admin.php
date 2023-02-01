@@ -16,7 +16,7 @@ class admin extends Controller
     }
     public function TampilkanDriver()
     {
-        return view('admin/tampilkanDriver',[
+        return view('admin/driver',[
             'driver' => driver::all()
         ]);
     }
