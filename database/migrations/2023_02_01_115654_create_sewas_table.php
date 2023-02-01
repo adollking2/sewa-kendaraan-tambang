@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kendaraan', function (Blueprint $table) {
+        Schema::create('sewa', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kendaraan');
-            $table->string('plat_nomor');
-            $table->foreignId('category_id');
+            $table->foreignId('kendaraan_id')->refersTo('id')->on('kendaraan');
+            $table->foreignId('driver_id')->refersTo('id')->on('drivers');
+            $table->string('status')->default('tersedia');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kendaraan');
+        Schema::dropIfExists('sewas');
     }
 };

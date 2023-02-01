@@ -12,7 +12,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 mt-4 text-gray-800"> Halaman sewa </h1>
 
-                    <!-- DataTales Example -->
+                    <!-- DataTales  -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Menampilkan semua kendaraan</h6>
@@ -35,8 +35,7 @@
                                             <td>{{ $item->status }}</td>
                                         </tr>    
                                         @endforeach
-                                        
-                 
+
                                     </tbody>
                                 </table>
                             </div>
