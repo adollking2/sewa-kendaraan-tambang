@@ -1,5 +1,5 @@
 {{-- reosurce from resources/views/layouts/admin --}}
-@extends('layouts.admin')
+@extends('layouts.penyetuju')
 {{-- load container  --}}
 
 @section('container')

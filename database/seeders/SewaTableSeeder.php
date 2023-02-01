@@ -19,27 +19,27 @@ class SewaTableSeeder extends Seeder
             'driver_id' => '1',
             'kendaraan_id' => '1',
             'status' => 'pending',
-            'tanggal_sewa' => '01/02/2021',
+            'tanggal_sewa' => '2022-01-01',
         ]);
         DB::table('sewa')->insert([
             'driver_id' => '2',
             'kendaraan_id' => '2',
             'status' => 'approved',
-            'tanggal_sewa' => '01/02/2021',
-        ]);
-
-        DB::table('sewa')->insert([
-            'driver_id' => '2',
-            'kendaraan_id' => '2',
-            'status' => 'approved',
-            'tanggal_sewa' => '02/02/2021',
+            'tanggal_sewa' => '2022-02-01',
         ]);
 
         DB::table('sewa')->insert([
             'driver_id' => '2',
             'kendaraan_id' => '2',
             'status' => 'approved',
-            'tanggal_sewa' => '02/02/2021',
+            'tanggal_sewa' => '2022-01-01',
+        ]);
+
+        DB::table('sewa')->insert([
+            'driver_id' => '2',
+            'kendaraan_id' => '2',
+            'status' => 'approved',
+            'tanggal_sewa' => '2022-02-01',
         ]);
 
 

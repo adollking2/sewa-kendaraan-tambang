@@ -22,7 +22,7 @@ Route::post('/login', 'App\Http\Controllers\LoginController@login');
 Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 
 // route untuk halaman admin dashboard
-Route::get('/admin/dashboard',['App\Http\Controllers\KendaraanController','index'])->middleware('isLogin');
+Route::get('/admin/dashboard',['App\Http\Controllers\LaporanController','index'])->middleware('isLogin');
 
 // route untuk halaman penyetuju dashboard
 Route::get('/penyetuju/dashboard',['App\Http\Controllers\PenyetujuController','index'] )->middleware('isLogin');
@@ -46,3 +46,8 @@ Route::get('/admin/driver/', ['App\Http\Controllers\admin','TampilkanDriver']);
 // });
 
 Route::get('/admin/laporan', ['App\Http\Controllers\LaporanController','index']);
+Route::get('/admin/laporan/excel', ['App\Http\Controllers\LaporanController','excel']);
+
+Route::get('/penyetuju/laporan', ['App\Http\Controllers\PenyetujuController','show']);
+Route::get('/penyetuju/laporan/excel', ['App\Http\Controllers\PenyetujuController','excel']);
+

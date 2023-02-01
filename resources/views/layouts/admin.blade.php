@@ -43,7 +43,7 @@
             </a>
             <li class="nav-item">
                 <a class="nav-link" href="/logout">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-sign-out"></i>
                     <span>Keluar</span></a>
             </li>
             <!-- Divider -->
@@ -51,7 +51,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/admin/dasboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>

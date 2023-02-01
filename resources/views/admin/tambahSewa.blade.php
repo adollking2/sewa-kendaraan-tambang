@@ -38,7 +38,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group date" data-provide="datepicker">
-                                  <input type="text" class="form-control" name="tanggal_sewa" placeholder="yyyy/mm/dd/">
+                                  <input type="text" class="form-control" name="tanggal_sewa" placeholder="yyyy-mm-dd">
                                   <div class="input-group-addon">
                                       <span class="glyphicon glyphicon-th"></span>
                                   </div>
@@ -56,9 +56,10 @@
 
     </div>
     <script>
-      $('.datepicker').datepicker({
-      format: 'yy/mm/dd'
-        });
+      $('.date').datepicker({
+        format: 'yyyy-mm-dd'
+        
+    });
       </script>
 @endsection
 
