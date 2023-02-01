@@ -34,7 +34,7 @@
                                             <td>{{ $item->nama_driver }}</td>
                                             <td>{{ $item->no_hp }}</td>
                                             <td>{{ $item->no_sim }}</td>
-                                            <td>{{ $item->alamat }}</td>
+                                            <td>{{ $item->alamat }} <a href="admin/edit/{id}"></a></td>
                                         </tr>    
                                         @endforeach
                                         

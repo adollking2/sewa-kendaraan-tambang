@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('kendaraan_id')->refersTo('id')->on('kendaraan');
             $table->foreignId('driver_id')->refersTo('id')->on('drivers');
-            $table->string('status')->default('tersedia');
+            $table->string('status');
+            $table->string('tanggal_sewa');
             $table->timestamps();
         });
     }

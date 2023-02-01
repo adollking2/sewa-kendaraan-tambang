@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nama_kendaraan');
             $table->string('plat_nomor');
             $table->foreignId('category_id');
+            $table->string('status');
             $table->timestamps();
         });
     }

@@ -11,6 +11,8 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 mt-4 text-gray-800"> Halaman sewa </h1>
+                    {{-- button tambah --}}
+                    
 
                     <!-- DataTales  -->
                     <div class="card shadow mb-4">
@@ -18,20 +20,30 @@
                             <h6 class="m-0 font-weight-bold text-primary">Menampilkan semua kendaraan</h6>
                         </div>
                         <div class="card-body">
+                            <div>
+                                <a href="/admin/sewa/tambah" class="btn btn-primary mb-4 mt-4"> 
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Tambah data Sewa</span>
+                                </a>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Nama kendaran</th>
-                                            <th>jenis kendaraan</th>
+                                            <th>Nama Driver</th>
+                                            <th>Tanggal Sewa</th>
                                             <th>status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($kendaraan as $item)
+                                        @foreach ($sewa as $item)
                                         <tr>
                                             <td>{{ $item->nama_kendaraan }}</td>
-                                            <td>{{ $item->jenis_kendaraan }}</td>
+                                            <td>{{ $item->nama_driver }}</td>
+                                            <td>{{ $item->tanggal_sewa }}</td>
                                             <td>{{ $item->status }}</td>
                                         </tr>    
                                         @endforeach

@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::post('/login', 'App\Http\Controllers\LoginController@login');
+
 Route::get('/logout', 'App\Http\Controllers\LoginController@logout');
 
 // route untuk halaman admin dashboard
@@ -35,8 +36,14 @@ Route::post('/admin/simpanKendaraan',['App\Http\Controllers\KendaraanController'
 Route::get('/admin/kendaraan',['App\Http\Controllers\KendaraanController','TampilkanKendaran']);
 
 Route::get('/admin/sewa',['App\Http\Controllers\SewaController','index']);
+Route::get('/admin/sewa/tambah',['App\Http\Controllers\SewaController','showAddForm']);
+Route::post('/admin/sewa',['App\Http\Controllers\SewaController','create']);
+
+Route::get('/admin/sewa/edit/{id}',['App\Http\Controllers\SewaController','edit']);
 
 Route::get('/admin/driver/', ['App\Http\Controllers\admin','TampilkanDriver']);
-Route::get('/admin/driver/tambah', function () {
-    return view('tambah_driver');
-});
+// Route::get('/admin/driver/tambah', function () {
+//     return view('tambah_driver');
+// });
+
+Route::get('/admin/laporan', ['App\Http\Controllers\LaporanController','index']);

@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class KendaraanSeeder extends Seeder
+class KendaraanTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,6 +20,7 @@ class KendaraanSeeder extends Seeder
             'nama_kendaraan' => 'Kendaraan 1',
             'plat_nomor' => 'B 1234 ABC',
             'category_id' => '1',
+            'status' => 'tersedia',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -27,6 +28,7 @@ class KendaraanSeeder extends Seeder
             'nama_kendaraan' => 'Kendaraan 2',
             'plat_nomor' => 'N 1234 FC',
             'category_id' => '1',
+            'status' => 'tersedia',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -34,6 +36,7 @@ class KendaraanSeeder extends Seeder
             'nama_kendaraan' => 'Kendaraan 3',
             'plat_nomor' => 'Z 1234 GHI',
             'category_id' => '2',
+            'status' => 'tersedia',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
