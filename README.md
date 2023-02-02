@@ -1,4 +1,5 @@
 # Sewa Kendaraan tambang
+live server : https://sewakendaraantambang.kencang.id/
 Sewa kendaraan tambang mengunakan framewok PHP dan mengunakan database mysql
 - Laravel 8
 - jquery
